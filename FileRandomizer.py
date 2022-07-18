@@ -1,5 +1,5 @@
 import os
-from tabnanny import check
+import random
 
 
 # TODO Add Content
@@ -23,5 +23,16 @@ for file in fileList:
 # Generate md5 for all the files
 
 # Shuffle the filenames
+ranFileList = random.sample(fileList)
+# Just for good measure
+random.shuffle(ranFileList)
+random.shuffle(ranFileList)
+random.shuffle(ranFileList)
+random.shuffle(ranFileList)
+
+# Rename the files
+for orig, rand in zip(fileList, ranFileList):
+    os.rename(orig, rand)
+
 
 # Verify the files still have the same md5
