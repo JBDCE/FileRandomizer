@@ -27,7 +27,7 @@ for file in fileList:
 md5List = []
 for file in fileList:
     # Loading the whole file like this is not good
-    md5List.append(hashlib.md5(open(file).read())) 
+    md5List.append(hashlib.md5(open(file).read().encode('utf-8')))
 
 # Shuffle the filenames
 randFileList = random.sample(fileList)
@@ -49,8 +49,8 @@ for orig, rand in zip(fileList, randFileList):
 randMd5List = []
 for file in randFileList:
     # Same memory issue as previously
-    randMd5List.append(hashlib.md5(open(file).read()))
-
+    randMd5List.append(hashlib.md5(open(file).read().encode('utf-8')))
+    
 for a, b in zip(md5List, randMd5List):
     if a!=b: print("Error", end="")
     print("A: {0} B: {1}", a, b)
