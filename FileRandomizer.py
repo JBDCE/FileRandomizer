@@ -5,7 +5,7 @@ import random
 # Create a list of all the files in the folder
 fileList = []
 
-for file in os.listdir("/"):
+for file in os.listdir("."):
     if os.path.isfile(file):
         print("Found file: ", file)
         fileList.append(file)
