@@ -10,6 +10,9 @@ for file in os.listdir("."):
         print("Found file: ", file)
         fileList.append(file)
 
+# Remove the python script file
+fileList.remove(__file__)
+
 # Assert all the files have the same file extension
 checkExt = os.path.splitext(fileList[0])
 
