@@ -3,10 +3,12 @@
 This program was developed in one night. To shuffle the filenames inside of a folder around. Without altering any of the files other information or contents.
 
 ### Usage
-Download the FileRandomizer.py file from this repository.
-Move the File into a folder with the files you want to randomise
-Either double click the file or run it from the console with 
-```py FileRandomizer.py```
+- Download the FileRandomizer.py file from this repository.
+- Move the File into a folder with the files you want to randomise
+- Either double click the file or run it from the console with: 
+```
+py FileRandomizer.py
+```
 
 ### Goals
 - [✔] Run the software by placing it inside the folder with the files to be renamed and excecute it with no runtime arguments
