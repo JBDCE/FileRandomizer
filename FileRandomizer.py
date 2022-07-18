@@ -7,17 +7,19 @@ fileList = []
 
 for file in os.listdir("."):
     if os.path.isfile(file):
-        print("Found file: ", file)
         fileList.append(file)
 
 # Remove the python script file
-fileList.remove(__file__)
+print(os.path.basename(__file__))
+fileList.remove(os.path.basename(__file__))
 
 # Assert all the files have the same file extension
-checkExt = os.path.splitext(fileList[0])
+_, checkExt = os.path.splitext(fileList[-1])
+print("Ensuring filetype: ", checkExt)
 
 for file in fileList:
     _, ext = os.path.splitext(file)
+    print("Found file: ", file)
     assert ext==checkExt, \
         "Error Asserting filenames. Are the files the same type?"
 
@@ -40,7 +42,8 @@ randFileList = random.sample(fileList)
 
 # Rename the files
 for orig, rand in zip(fileList, randFileList):
-    os.rename(orig, rand)
+    pass
+    # os.rename(orig, rand)
 
 # Verify the files still have the same md5
 randMd5List = []
